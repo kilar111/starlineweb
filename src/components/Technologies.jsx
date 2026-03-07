@@ -4,10 +4,11 @@ import { motion } from 'framer-motion';
 const techStack = [
     { name: 'React', color: 'hover:text-cyan-400', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
     { name: 'Next.js', color: 'hover:text-white', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-    { name: 'Laravel', color: 'hover:text-red-500', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg' },
+    { name: 'Laravel', color: 'hover:text-red-500', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' },
     { name: 'Node.js', color: 'hover:text-green-500', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
     { name: 'MySQL', color: 'hover:text-blue-500', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
     { name: 'AWS', color: 'hover:text-orange-500', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
+    { name: 'WordPress', color: 'hover:text-blue-500', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg' },
 ];
 
 const Technologies = () => {
@@ -25,7 +26,7 @@ const Technologies = () => {
                 </motion.p>
 
                 {/* Marquee or Grid of Logos */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center opacity-70 hover:opacity-100 transition-opacity duration-500">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 items-center justify-items-center opacity-70 hover:opacity-100 transition-opacity duration-500">
                     {techStack.map((tech, index) => (
                         <motion.div
                             key={index}

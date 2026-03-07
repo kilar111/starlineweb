@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layout, Code2, Search, Palette, ShoppingCart, BarChart3 } from 'lucide-react';
+import { Layout, Code2, Search, Palette, ShoppingCart, BarChart3, Globe } from 'lucide-react';
 
 const services = [
     {
@@ -50,6 +50,14 @@ const services = [
         accent: 'group-hover:text-emerald-500',
         border: 'group-hover:border-emerald-500/50',
         bg: 'bg-emerald-500/5'
+    },
+    {
+        title: 'WordPress Development',
+        description: 'Blazing fast, secure, and easily manageable WordPress sites tailored for your business.',
+        icon: Globe,
+        accent: 'group-hover:text-blue-400',
+        border: 'group-hover:border-blue-400/50',
+        bg: 'bg-blue-400/5'
     }
 ];
 

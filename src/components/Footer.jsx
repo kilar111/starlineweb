@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Github, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -32,9 +32,9 @@ const Footer = () => {
                                 <span className="sr-only">Twitter</span>
                                 <Twitter className="h-5 w-5" />
                             </a>
-                            <a href="#" className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-purple-500/20 hover:border-purple-500/50 hover:text-purple-400 text-slate-400 transition-all duration-300">
-                                <span className="sr-only">LinkedIn</span>
-                                <Linkedin className="h-5 w-5" />
+                            <a href="https://wa.me/94787199535" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-green-500/20 hover:border-green-500/50 hover:text-green-400 text-slate-400 transition-all duration-300">
+                                <span className="sr-only">WhatsApp</span>
+                                <MessageCircle className="h-5 w-5" />
                             </a>
                         </div>
                     </div>

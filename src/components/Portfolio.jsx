@@ -4,22 +4,25 @@ import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
     {
-        title: 'MIM Academy',
-        category: 'Education & Course Portal',
-        image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600',
-        color: 'from-blue-600/20 to-transparent'
+        title: 'SNG Gems',
+        category: 'Luxury Gem E-commerce',
+        image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&q=80&w=800',
+        color: 'from-blue-600/20 to-transparent',
+        link: 'https://snggems.com'
     },
     {
         title: 'Nexus Intelligence',
         category: 'SaaS Dashboard',
         image: '/project_dashboard.png',
-        color: 'from-purple-600/20 to-transparent'
+        color: 'from-purple-600/20 to-transparent',
+        link: '#'
     },
     {
-        title: 'Lumina Haute Couture',
-        category: 'E-commerce Platform',
-        image: '/project_ecommerce.png',
-        color: 'from-orange-600/20 to-transparent'
+        title: 'Westnahira Cellularz',
+        category: 'Tech & Gadget Marketplace',
+        image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800',
+        color: 'from-orange-600/20 to-transparent',
+        link: 'https://westnahira-cellularz.vercel.app'
     }
 ];
 
@@ -54,13 +57,16 @@ const Portfolio = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <motion.a
                             key={index}
+                            href={project.link}
+                            target={project.link !== '#' ? "_blank" : undefined}
+                            rel={project.link !== '#' ? "noopener noreferrer" : undefined}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group cursor-pointer"
+                            className="group cursor-pointer block"
                         >
                             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-[#0a0a0a] border border-white/5 group-hover:border-white/20 transition-all duration-500 mb-6">
                                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10`} />
@@ -84,7 +90,7 @@ const Portfolio = () => {
                                     {project.category}
                                 </p>
                             </div>
-                        </motion.div>
+                        </motion.a>
                     ))}
                 </div>
             </div>
