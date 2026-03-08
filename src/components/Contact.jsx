@@ -62,7 +62,7 @@ const Contact = () => {
                                     <div>
                                         <h4 className="text-sm tracking-widest text-slate-500 uppercase mb-1">Call & WhatsApp Us</h4>
                                         <a href="https://wa.me/94787199535" target="_blank" rel="noopener noreferrer" className="text-xl text-white font-medium hover:text-purple-400 transition-colors">
-                                            +94 78 719 9535
+                                            +94 787199535
                                         </a>
                                     </div>
                                 </div>
