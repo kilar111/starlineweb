@@ -84,7 +84,7 @@ const Contact = () => {
                         {/* Google Map Embed Placeholder or actual iframe */}
                         <div className="w-full h-64 rounded-3xl overflow-hidden border border-white/10 shadow-lg grayscale invert hue-rotate-180 opacity-80 hover:opacity-100 transition-opacity duration-500">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.585859734!2d79.786164!3d6.9218374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a70ad%3A0x2db2e1b06f0e442!2sColombo!5e0!3m2!1sen!2slk!4v1709736800000!5m2!1sen!2slk"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0634876645755!2d79.99165787499614!3d7.006099993004989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f8e3b0f0f0f1%3A0x1f1f1f1f1f1f1f1f!2sGampaha!5e0!3m2!1sen!2slk!4v1709736800000!5m2!1sen!2slk"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
