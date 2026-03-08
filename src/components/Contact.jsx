@@ -74,7 +74,7 @@ const Contact = () => {
                                     <div>
                                         <h4 className="text-sm tracking-widest text-slate-500 uppercase mb-1">Visit Us</h4>
                                         <p className="text-xl text-white font-medium">
-                                            Colombo, Sri Lanka
+                                            Gampaha, Sri Lanka
                                         </p>
                                     </div>
                                 </div>
