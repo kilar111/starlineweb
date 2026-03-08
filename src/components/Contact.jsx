@@ -49,8 +49,8 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-sm tracking-widest text-slate-500 uppercase mb-1">Email Us</h4>
-                                        <a href="mailto:hello@starlineweb.com" className="text-xl text-white font-medium hover:text-blue-400 transition-colors">
-                                            hello@starlineweb.com
+                                        <a href="mailto:contact@starlineweb.com" className="text-xl text-white font-medium hover:text-blue-400 transition-colors">
+                                            contact@starlineweb.com
                                         </a>
                                     </div>
                                 </div>
