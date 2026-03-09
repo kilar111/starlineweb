@@ -9,7 +9,6 @@ import Technologies from './components/Technologies'
 import Pricing from './components/Pricing'
 import PostLaunchServices from './components/PostLaunchServices'
 import AboutUs from './components/AboutUs'
-import Testimonials from './components/Testimonials'
 import Blog from './components/Blog'
 import CTASection from './components/CTASection'
 import Contact from './components/Contact'
@@ -29,7 +28,6 @@ function App() {
         <Pricing />
         <PostLaunchServices />
         <AboutUs />
-        <Testimonials />
         <Blog />
         <CTASection />
         <Contact />
