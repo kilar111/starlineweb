@@ -100,13 +100,13 @@ const Hero = () => {
                     >
                         <div className="relative p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md overflow-hidden group">
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div className="text-5xl font-black text-white mb-2">10+</div>
+                            <div className="text-5xl font-black text-white mb-2">2+</div>
                             <div className="text-slate-400 font-medium text-sm tracking-widest uppercase">Years Experience</div>
                         </div>
 
                         <div className="relative p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md overflow-hidden group">
                             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div className="text-5xl font-black text-white mb-2">250+</div>
+                            <div className="text-5xl font-black text-white mb-2">15+</div>
                             <div className="text-slate-400 font-medium text-sm tracking-widest uppercase">Projects Completed</div>
                         </div>
 
