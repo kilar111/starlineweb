@@ -10,14 +10,55 @@ const Contact = () => {
         message: ''
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState('');
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert('Message sent successfully!');
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        setIsSubmitting(true);
+        setSubmitStatus('');
+
+        try {
+            // Send to Web3Forms (free email service)
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: import.meta.env.VITE_WEB3FORMS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY',
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    subject: 'New Contact Form Submission from Starline Web',
+                    from_name: 'Starline Web Contact Form'
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', phone: '', message: '' });
+                // Also send to your email directly as backup
+                window.location.href = `mailto:contact@starlineweb.com?subject=New Contact from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AMessage: ${formData.message}`;
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setSubmitStatus('error');
+            // Fallback to mailto
+            window.location.href = `mailto:contact@starlineweb.com?subject=New Contact from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AMessage: ${formData.message}`;
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -166,13 +207,26 @@ const Contact = () => {
                                 />
                             </div>
 
+                            {submitStatus === 'success' && (
+                                <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-center">
+                                    ✓ Message sent successfully! We'll get back to you soon.
+                                </div>
+                            )}
+
+                            {submitStatus === 'error' && (
+                                <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center">
+                                    ✗ Failed to send message. Please try calling us directly.
+                                </div>
+                            )}
+
                             <button
                                 type="submit"
-                                className="w-full py-5 bg-white text-black font-extrabold text-lg tracking-widest uppercase rounded-full hover:bg-slate-200 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.1)] relative overflow-hidden group mt-6"
+                                disabled={isSubmitting}
+                                className="w-full py-5 bg-white text-black font-extrabold text-lg tracking-widest uppercase rounded-full hover:bg-slate-200 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.1)] relative overflow-hidden group mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 ease-out z-0" />
                                 <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                                    Send Message
+                                    {isSubmitting ? 'Sending...' : 'Send Message'}
                                 </span>
                             </button>
 
